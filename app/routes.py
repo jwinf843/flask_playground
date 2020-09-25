@@ -9,6 +9,15 @@ def index():
         'username': 'jwinf843',
     }
 
-    return render_template('index.html', title='Home', user=user)
+    posts = [
+        {
+            'author': {'username': 'john360n'},
+            'body': 'Rainy day in Osaka'
+        },
+        {
+            'author': {'username': 'jwinf843'},
+            'body': 'Watched Sorry to Bother You last night'
+        },
+    ]
 
-app.run(debug=True)
+    return render_template('index.html', title='Home', user=user, posts=posts)
